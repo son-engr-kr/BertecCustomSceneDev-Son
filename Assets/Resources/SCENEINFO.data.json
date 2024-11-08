@@ -1,0 +1,404 @@
+{
+  "PackageName": "com.BertecCorporation.SampleScene",
+  "PackageVersion": "1.1.0.1638",
+  "ProductName": "SampleScene",
+  "FrameworkVersion": "1.0.6",
+  "FrameworkProtocol": 1,
+  "Scenes": [
+    {
+      "Key": "ClosedRoom",
+      "Name": "Closed Room",
+      "Options": [
+        {
+          "Type": 2,
+          "Key": "boxcolor",
+          "Name": "Box Color",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "red",
+                "Name": "Red"
+              },
+              {
+                "Key": "green",
+                "Name": "Green"
+              },
+              {
+                "Key": "blue",
+                "Name": "Blue"
+              }
+            ],
+            "DefaultChoice": "green"
+          }
+        }
+      ]
+    },
+    {
+      "Key": "staticsceneexample",
+      "Name": "Static Scene Example",
+      "Features": {
+        "HasPostProcessing": true,
+        "HasCameraPosition": true,
+        "CameraRotation": 3,
+        "Cognitive": {
+          "Items": [
+            {
+              "SubOptions": {
+                "Items": [
+                  {
+                    "Key": "congruent",
+                    "Name": "Congruent"
+                  },
+                  {
+                    "Key": "incongruent",
+                    "Name": "Incongruent"
+                  },
+                  {
+                    "Key": "random",
+                    "Name": "Random"
+                  }
+                ],
+                "DefaultChoice": "congruent"
+              },
+              "SubOptionName": "Congruency",
+              "Key": "stroop",
+              "Name": "Stroop"
+            }
+          ]
+        }
+      },
+      "Options": [
+        {
+          "Type": 2,
+          "Key": "background",
+          "Name": "Background Color",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "black",
+                "Name": "Black"
+              },
+              {
+                "Key": "blue",
+                "Name": "Blue"
+              }
+            ],
+            "DefaultChoice": "black"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "bubbles",
+          "Name": "Object Density",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "off",
+                "Name": "Off"
+              },
+              {
+                "Key": "5",
+                "Name": "5"
+              },
+              {
+                "Key": "10",
+                "Name": "10"
+              },
+              {
+                "Key": "20",
+                "Name": "20"
+              },
+              {
+                "Key": "40",
+                "Name": "40"
+              },
+              {
+                "Key": "80",
+                "Name": "80"
+              },
+              {
+                "Key": "160",
+                "Name": "160"
+              },
+              {
+                "Key": "320",
+                "Name": "320"
+              },
+              {
+                "Key": "640",
+                "Name": "640"
+              }
+            ],
+            "DefaultChoice": "off"
+          }
+        },
+        {
+          "Type": 1,
+          "Key": "visualaid",
+          "Name": "Visual Aid",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "DefaultChoice": "False"
+          }
+        }
+      ]
+    },
+    {
+      "Key": "visualflowexample",
+      "Name": "Visual Flow Example",
+      "Features": {
+        "VisualFlow": true,
+        "HasPostProcessing": true,
+        "HasObstacles": true,
+        "CameraRotation": 3,
+        "CoPKeypointVisualizers": {
+          "Items": [
+            {
+              "Key": "none",
+              "Name": "Invisible"
+            },
+            {
+              "Key": "ball",
+              "Name": "Blue Sphere"
+            },
+            {
+              "Key": "star",
+              "Name": "Yellow Star"
+            }
+          ],
+          "DefaultChoice": "none"
+        },
+        "KeypointVisualizers": [
+          {
+            "Key": "kp1",
+            "Name": "Keypoint 1",
+            "Choices": {
+              "Items": [
+                {
+                  "Key": "star",
+                  "Name": "Yellow Star"
+                }
+              ],
+              "DefaultChoice": "star"
+            }
+          },
+          {
+            "Key": "kp2",
+            "Name": "Keypoint 2",
+            "Choices": {
+              "Items": [
+                {
+                  "Key": "star",
+                  "Name": "Yellow Star"
+                },
+                {
+                  "Key": "ball",
+                  "Name": "Blue Sphere"
+                }
+              ],
+              "DefaultChoice": "ball"
+            }
+          }
+        ],
+        "Cognitive": {
+          "Items": [
+            {
+              "SubOptions": {
+                "Items": [
+                  {
+                    "Key": "congruent",
+                    "Name": "Congruent"
+                  },
+                  {
+                    "Key": "incongruent",
+                    "Name": "Incongruent"
+                  },
+                  {
+                    "Key": "random",
+                    "Name": "Random"
+                  }
+                ],
+                "DefaultChoice": "congruent"
+              },
+              "SubOptionName": "Congruency",
+              "Key": "stroop",
+              "Name": "Stroop"
+            }
+          ]
+        }
+      },
+      "Options": [
+        {
+          "Type": 2,
+          "Key": "lighting",
+          "Name": "Lighting",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "light",
+                "Name": "Light"
+              },
+              {
+                "Key": "dark",
+                "Name": "Dark"
+              }
+            ],
+            "DefaultChoice": "light"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "pathsize",
+          "Name": "Size",
+          "Description": "",
+          "Grouping": [
+            "Environment",
+            "Path"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "narrow",
+                "Name": "Narrow"
+              },
+              {
+                "Key": "normal",
+                "Name": "Normal"
+              },
+              {
+                "Key": "wide",
+                "Name": "Wide"
+              }
+            ],
+            "DefaultChoice": "normal"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "pathtype",
+          "Name": "Texture",
+          "Description": "",
+          "Grouping": [
+            "Environment",
+            "Path"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "spotted",
+                "Name": "Spotted Tile"
+              },
+              {
+                "Key": "solid",
+                "Name": "Solid Colored Tile"
+              }
+            ],
+            "DefaultChoice": "solid"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "periphery",
+          "Name": "Periphery",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "none",
+                "Name": "None"
+              },
+              {
+                "Key": "pyramids",
+                "Name": "Pyramids"
+              },
+              {
+                "Key": "rectangles",
+                "Name": "Cubes"
+              }
+            ],
+            "DefaultChoice": "none"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "obstacle",
+          "Name": "Mode",
+          "Grouping": [
+            "Environment",
+            "Obstacles"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "none",
+                "Name": "None"
+              },
+              {
+                "Key": "easy",
+                "Name": "Easy"
+              },
+              {
+                "Key": "medium",
+                "Name": "Medium"
+              },
+              {
+                "Key": "hard",
+                "Name": "Hard"
+              }
+            ],
+            "DefaultChoice": "none"
+          }
+        },
+        {
+          "Type": 1,
+          "Key": "obstacle_audio_feedback",
+          "Name": "Audio Feedback",
+          "Description": "",
+          "Grouping": [
+            "Environment",
+            "Obstacles"
+          ]
+        },
+        {
+          "Type": 1,
+          "Key": "visualdistractions",
+          "Name": "Bubbles",
+          "Grouping": [
+            "Environment",
+            "Distractions"
+          ]
+        },
+        {
+          "Type": 1,
+          "Key": "audioambiance",
+          "Name": "Scene Audio",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ]
+        }
+      ]
+    }
+  ]
+}
