@@ -158,6 +158,249 @@
       ]
     },
     {
+      "Key": "customhallwayscene",
+      "Name": "Custom Hallway Scene",
+      "Features": {
+        "VisualFlow": true,
+        "HasPostProcessing": true,
+        "HasObstacles": true,
+        "CameraRotation": 3,
+        "CoPKeypointVisualizers": {
+          "Items": [
+            {
+              "Key": "none",
+              "Name": "Invisible"
+            },
+            {
+              "Key": "ball",
+              "Name": "Blue Sphere"
+            },
+            {
+              "Key": "star",
+              "Name": "Yellow Star"
+            }
+          ],
+          "DefaultChoice": "none"
+        },
+        "KeypointVisualizers": [
+          {
+            "Key": "kp1",
+            "Name": "Keypoint 1",
+            "Choices": {
+              "Items": [
+                {
+                  "Key": "star",
+                  "Name": "Yellow Star"
+                }
+              ],
+              "DefaultChoice": "star"
+            }
+          },
+          {
+            "Key": "kp2",
+            "Name": "Keypoint 2",
+            "Choices": {
+              "Items": [
+                {
+                  "Key": "star",
+                  "Name": "Yellow Star"
+                },
+                {
+                  "Key": "ball",
+                  "Name": "Blue Sphere"
+                }
+              ],
+              "DefaultChoice": "ball"
+            }
+          }
+        ],
+        "Cognitive": {
+          "Items": [
+            {
+              "SubOptions": {
+                "Items": [
+                  {
+                    "Key": "congruent",
+                    "Name": "Congruent"
+                  },
+                  {
+                    "Key": "incongruent",
+                    "Name": "Incongruent"
+                  },
+                  {
+                    "Key": "random",
+                    "Name": "Random"
+                  }
+                ],
+                "DefaultChoice": "congruent"
+              },
+              "SubOptionName": "Congruency",
+              "Key": "stroop",
+              "Name": "Stroop"
+            }
+          ]
+        }
+      },
+      "Options": [
+        {
+          "Type": 2,
+          "Key": "lighting",
+          "Name": "Lighting",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "light",
+                "Name": "Light"
+              },
+              {
+                "Key": "dark",
+                "Name": "Dark"
+              }
+            ],
+            "DefaultChoice": "light"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "pathsize",
+          "Name": "Size",
+          "Description": "",
+          "Grouping": [
+            "Environment",
+            "Path"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "narrow",
+                "Name": "Narrow"
+              },
+              {
+                "Key": "normal",
+                "Name": "Normal"
+              },
+              {
+                "Key": "wide",
+                "Name": "Wide"
+              }
+            ],
+            "DefaultChoice": "normal"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "pathtype",
+          "Name": "Texture",
+          "Description": "",
+          "Grouping": [
+            "Environment",
+            "Path"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "spotted",
+                "Name": "Spotted Tile"
+              },
+              {
+                "Key": "solid",
+                "Name": "Solid Colored Tile"
+              }
+            ],
+            "DefaultChoice": "solid"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "periphery",
+          "Name": "Periphery",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "none",
+                "Name": "None"
+              },
+              {
+                "Key": "pyramids",
+                "Name": "Pyramids"
+              },
+              {
+                "Key": "rectangles",
+                "Name": "Cubes"
+              }
+            ],
+            "DefaultChoice": "none"
+          }
+        },
+        {
+          "Type": 2,
+          "Key": "obstacle",
+          "Name": "Mode",
+          "Grouping": [
+            "Environment",
+            "Obstacles"
+          ],
+          "Choices": {
+            "Items": [
+              {
+                "Key": "none",
+                "Name": "None"
+              },
+              {
+                "Key": "easy",
+                "Name": "Easy"
+              },
+              {
+                "Key": "medium",
+                "Name": "Medium"
+              },
+              {
+                "Key": "hard",
+                "Name": "Hard"
+              }
+            ],
+            "DefaultChoice": "none"
+          }
+        },
+        {
+          "Type": 1,
+          "Key": "obstacle_audio_feedback",
+          "Name": "Audio Feedback",
+          "Description": "",
+          "Grouping": [
+            "Environment",
+            "Obstacles"
+          ]
+        },
+        {
+          "Type": 1,
+          "Key": "visualdistractions",
+          "Name": "Bubbles",
+          "Grouping": [
+            "Environment",
+            "Distractions"
+          ]
+        },
+        {
+          "Type": 1,
+          "Key": "audioambiance",
+          "Name": "Scene Audio",
+          "Description": "",
+          "Grouping": [
+            "Environment"
+          ]
+        }
+      ]
+    },
+    {
       "Key": "visualflowexample",
       "Name": "Visual Flow Example",
       "Features": {
