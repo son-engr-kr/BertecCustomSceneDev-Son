@@ -844,7 +844,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84e8c44a7adef9446af7a4cd6d51d205, type: 2}
+  - {fileID: 2100000, guid: 778bc32ac865f584394abd49eea01400, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 6073292882240324014}
   - component: {fileID: 1969670551572649347}
   m_Layer: 0
-  m_Name: CustomGroundBlock
+  m_Name: OtherBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

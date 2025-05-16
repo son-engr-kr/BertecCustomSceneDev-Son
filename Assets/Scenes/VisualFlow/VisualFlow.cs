@@ -682,7 +682,6 @@ public class VisualFlow : MonoBehaviour
         // move the blocks first then reposition
         foreach (GroundBlock block in GroundBlocks)
         {
-            Debug.Log($"{block.name}");
             block.transform.position += Vector3.back * (Time.deltaTime * VisualFlowSpeed * FlowSpeedScaler);
         }
 
