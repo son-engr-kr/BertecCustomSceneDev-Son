@@ -270,11 +270,7 @@ public class CustomSceneController : MonoBehaviour
         //SetKeypointVisualizer(KeyPointVisualizerEvents.FORCEPLATEKEYPOINTTAG, KEYPOINTVIZOPTION_BALL);
         //SetKeypointVisualizer(KEYPOINTVIZOPTION_STAR, "");  // turn off the mocap star until the user selects one in the ui
         
-        SetLightingOption(LIGHTINGOPTION_LIGHT);
-        SetObstacleOption(OBSTACLEOPTION_NONE);
-        SetPathSizeOption(PATHSIZEOPTION_NORMAL);
-        SetPathTypeOption(PATHTYPEOPTION_SOLID);
-        SetPeripheralOption(PERIPHERALOPTION_NONE);
+
         SetAudioAmbiance(false);
         SetObstacleAudioFeedbackOption(false);
         SetVisualDistraction(false);
@@ -426,15 +422,6 @@ public class CustomSceneController : MonoBehaviour
             SetPathTypeOption(PATHTYPEOPTION_SPOTTED);
         }
 
-        // test lighting
-        if (Keyboard.current.dKey.wasPressedThisFrame)
-        {
-            SetLightingOption(LIGHTINGOPTION_LIGHT);
-        }
-        else if (Keyboard.current.fKey.wasPressedThisFrame)
-        {
-            SetLightingOption(LIGHTINGOPTION_DARK);
-        }
 
         // test peripheral
         if (Keyboard.current.zKey.wasPressedThisFrame)
@@ -464,23 +451,6 @@ public class CustomSceneController : MonoBehaviour
             SetKeypointVisualizer(KeyPointVisualizerEvents.FORCEPLATEKEYPOINTTAG, KEYPOINTVIZOPTION_STAR);
         }
 
-        // test obstacle
-        if (Keyboard.current.hKey.wasPressedThisFrame)
-        {
-            SetObstacleOption(OBSTACLEOPTION_EASY);
-        }
-        else if (Keyboard.current.jKey.wasPressedThisFrame)
-        {
-            SetObstacleOption(OBSTACLEOPTION_MEDIUM);
-        }
-        else if (Keyboard.current.kKey.wasPressedThisFrame)
-        {
-            SetObstacleOption(OBSTACLEOPTION_HARD);
-        }
-        else if (Keyboard.current.lKey.wasPressedThisFrame)
-        {
-            SetObstacleOption(OBSTACLEOPTION_NONE);
-        }
 
         // test ambiance sound
         if (Keyboard.current.aKey.wasPressedThisFrame)
@@ -530,9 +500,6 @@ public class CustomSceneController : MonoBehaviour
     {
         switch (key)
         {
-            case LIGHTINGOPTION:
-                SetLightingOption(Utils.toString(val));
-                break;
             case PERIPHERALOPTION:
                 SetPeripheralOption(Utils.toString(val));
                 break;
@@ -557,22 +524,6 @@ public class CustomSceneController : MonoBehaviour
         }
     }
 
-    private void SetLightingOption(string lightingOption)
-    {
-        switch (lightingOption)
-        {
-            case LIGHTINGOPTION_LIGHT:
-                RenderSettings.skybox = DayTimeSkybox;
-                ColorUtility.TryParseHtmlString("#FFF4D6", out Color dayTimeColor);
-                DirectionalLight.color = dayTimeColor;
-                break;
-            case LIGHTINGOPTION_DARK:
-                RenderSettings.skybox = NightTimeSkybox;
-                ColorUtility.TryParseHtmlString("#1F1B5E", out Color nightTimeColor);
-                DirectionalLight.color = nightTimeColor;
-                break;
-        }
-    }
 
     private void SetPeripheralOption(string peripheralOption)
     {
