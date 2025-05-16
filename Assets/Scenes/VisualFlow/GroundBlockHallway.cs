@@ -28,9 +28,18 @@ public class GroundBlockHallway : GroundBlock
     }
     public void SetHallwaySize(float left, float right, float height)
     {
-        LeftWall.transform.localPosition = new Vector3(-left, 5f, 0);
-        RightWall.transform.localPosition = new Vector3(right, 5f, 0);
+        float defaultHeight = 0.3f;
+        float defaultWidth = 0.36f;
+        LeftWall.transform.localPosition = new Vector3(-left, height/2f, 0);
+        LeftWall.transform.localScale = new Vector3(1f, height / 10f / defaultHeight, 1f);
+
+        RightWall.transform.localPosition = new Vector3(right, height/2f, 0);
+        RightWall.transform.localScale = new Vector3(1f, height / 10f / defaultHeight, 1f);
+
         Ceiling.transform.localPosition = new Vector3(0, height, 0);
+        Ceiling.transform.localScale = new Vector3((right + left) / 10f / defaultWidth, 1f, 1f);
+
         Floor.transform.localPosition = new Vector3(0, 0, 0);
+        Floor.transform.localScale = new Vector3((right + left) / 10f / defaultWidth, 1f, 1f);
     }
 }
