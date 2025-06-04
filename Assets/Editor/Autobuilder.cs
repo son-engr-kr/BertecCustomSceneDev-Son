@@ -10,10 +10,7 @@ using UnityEngine;
 class Autobuilder
 {
     static private string[] scenes = {
-    "Assets/Scenes/Startup/StartupScene.unity",
-    "Assets/Scenes/StaticScene/StaticScene.unity",
-    "Assets/Scenes/VisualFlow/VisualFlow.unity",
-    "Assets/Scenes/ClosedRoom/ClosedRoom.unity",
+    "Assets/Scenes/VisualFlow/CustomVisualFlow.unity",
     };
 
     static private string outputFolder()

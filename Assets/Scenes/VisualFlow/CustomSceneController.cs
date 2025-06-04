@@ -49,7 +49,7 @@ public class CustomSceneController : MonoBehaviour
     // The required Scene value is used to identify the Unity scene file to load. Scene names starting with the @ symbol indicate
     // the scene file should be located by the filename (ex: @VisualFlow will look for VisualFlow.unity in the Assets folder).
     // If the @ symbol is NOT used, the Scene value must be the full path to the scene file - in this case, Assets\Scenes\VisualFlow\VisualFlow.unity)
-    [SceneInfo(Key = "customhallwayscene", Name = "Custom Hallway Scene", Scene = "@CustomHallwayScene")]
+    [SceneInfo(Key = "customhallwayscene", Name = "Custom Hallway Scene", Scene = "@CustomVisualFlow")]
     public class CustomSceneInfo : SceneInfo
     {
         public CustomSceneInfo()

@@ -583,7 +583,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 249662508}
-  - component: {fileID: 249662509}
   m_Layer: 0
   m_Name: MainScene
   m_TagString: Untagged
@@ -618,18 +617,6 @@ Transform:
   - {fileID: 2088284416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &249662509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249662507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1cac404e24fdee459afcc9cedea371c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &307162591
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,7 +995,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 447464442}
-  - component: {fileID: 447464441}
+  - component: {fileID: 447464443}
   m_Layer: 0
   m_Name: VisualFlow
   m_TagString: Untagged
@@ -1016,7 +1003,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &447464441
+--- !u!4 &447464442
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447464440}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 249662508}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447464443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1025,7 +1027,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 447464440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69c7888622b4d7642bf2b7b94d333c02, type: 3}
+  m_Script: {fileID: 11500000, guid: f1cac404e24fdee459afcc9cedea371c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TestRunning: 0
@@ -1061,21 +1063,6 @@ MonoBehaviour:
   Path_SpottedRock: {fileID: 2100000, guid: c0837bacfa361a7468804df6aa072d6a, type: 2}
   Path_SolidColorTile: {fileID: 2100000, guid: e09126378edf9a04da7d96cdc9559daa, type: 2}
   visualizerMode: 0
---- !u!4 &447464442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447464440}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 249662508}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &484763610 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1969670551572649347, guid: 19f1fd4147cf96b46bc990be69b86408, type: 3}
@@ -2735,7 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf56c6cf9fe2db4cb6b41197a8bd5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  VisualFlowManager: {fileID: 447464441}
+  VisualFlowManager: {fileID: 0}
   KeyPointVisualizers:
   - {fileID: 1500018800}
   - {fileID: 1853812781}
