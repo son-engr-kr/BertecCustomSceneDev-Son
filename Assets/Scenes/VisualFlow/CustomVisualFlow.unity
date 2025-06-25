@@ -1598,7 +1598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TestRunning: 0
   VisualFlowSpeed: 0
-  FlowSpeedScaler: 0.2
+  FlowSpeedScaler: 1
   BlockRepostionOffset: 27
   GroundBlocks:
   - {fileID: 9013773943328105842}
