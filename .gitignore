@@ -57,3 +57,7 @@ TestBuild/
 Assets/GPUInstancer/Demos/
 Assets/GPUInstancer/Extras/
 BuildOutput/*
+
+
+#vscode
+.vscode
