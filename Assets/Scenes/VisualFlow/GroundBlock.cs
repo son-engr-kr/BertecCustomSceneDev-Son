@@ -47,7 +47,7 @@ public class GroundBlock : MonoBehaviour
         }
     }
 
-    public void SetPathSizeOption(string pathOption)
+    public virtual void SetPathSizeOption(string pathOption)
     {
         foreach (GameObject path in Path_Narrow)
         {

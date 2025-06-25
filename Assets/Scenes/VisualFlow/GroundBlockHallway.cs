@@ -12,19 +12,23 @@ public class GroundBlockHallway : GroundBlock
     public GameObject Ceiling;
     public GameObject Floor;
 
-    void Start()
-    {
-    }
 
-
-    public void SetPathTypeOption(string pathOption, Material pathMaterial)
+    public override void SetPathSizeOption(string pathOption)
     {
-        //Do nothing
-    }
-
-    public void SetPathSizeOption(string pathOption)
-    {
-        //Do nothing
+        
+        
+        if (pathOption == CustomSceneController.PATHSIZEOPTION_NARROW)
+        {
+            SetHallwaySize(0.3f, 0.3f, 0.3f);
+        }
+        else if (pathOption == CustomSceneController.PATHSIZEOPTION_NORMAL)
+        {
+            SetHallwaySize(0.5f, 0.5f, 0.5f);
+        }
+        else if (pathOption == CustomSceneController.PATHSIZEOPTION_WIDE)
+        {
+            SetHallwaySize(0.8f, 0.8f, 0.8f);
+        }
     }
     public void SetHallwaySize(float left, float right, float height)
     {
