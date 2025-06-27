@@ -197,7 +197,7 @@ public class CustomSceneController : MonoBehaviour
     // UpdateVisualFlowSpeed and MoveGroundBlocks
     public float
         FlowSpeedScaler =
-            0.2f; // this is used to scale the belt speed to the visual flow speed. The belt speed is in meters per second
+            1.0f; // this is used to scale the belt speed to the visual flow speed. The belt speed is in meters per second
 
     // while the visual flow speed is in units per second. This value is used to convert the belt speed to the visual flow speed.
     // This value is set in the editor and should be tuned to match the visual flow speed to the belt speed.
