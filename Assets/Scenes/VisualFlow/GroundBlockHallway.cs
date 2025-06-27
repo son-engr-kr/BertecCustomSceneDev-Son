@@ -18,10 +18,10 @@ public class GroundBlockHallway : GroundBlock
         float narrowWidth = 1.15f;
         float narrowHeight = 3.2f;
 
-        float normalWidth = 3.75f;
+        float normalWidth = 4.3f;
         float normalHeight = 3.2f;
 
-        float wideWidth = 10000f;
+        float wideWidth = 20f;
         float wideHeight = 3.2f;
 
 

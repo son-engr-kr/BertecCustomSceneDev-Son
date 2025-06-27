@@ -7882,6 +7882,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GroundBlock1
       objectReference: {fileID: 0}
+    - target: {fileID: 8434486091840166455, guid: 5fa13d95a33fa724aabdc8fd6f2edb5b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

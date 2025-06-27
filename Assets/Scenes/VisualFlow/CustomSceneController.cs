@@ -6,6 +6,11 @@ using UnityEngine.InputSystem;
 
 public class CustomSceneController : MonoBehaviour
 {
+
+    public GameObject FakeWallNarrowNormal;
+    public GameObject FakeWallWide;
+    
+
     // Using variable names for the option keys helps avoid any copy-paste mistakes that can happen when using raw strings.
     // It also makes the code easier to read when differentiating between say PERIPHERALOPTION_NONE and OBSTACLEOPTION_NONE
     public const string LIGHTINGOPTION = "lighting";
@@ -507,8 +512,12 @@ public class CustomSceneController : MonoBehaviour
                 SetPathTypeOption(Utils.toString(val));
                 break;
             case PATHSIZEOPTION:
+            {
                 SetPathSizeOption(Utils.toString(val));
+                
                 break;
+
+            }
             case OBSTACLEOPTION:
                 SetObstacleOption(Utils.toString(val));
                 break;
@@ -544,6 +553,21 @@ public class CustomSceneController : MonoBehaviour
 
     private void SetPathSizeOption(string pathOption)
     {
+        if (pathOption == PATHSIZEOPTION_NARROW)
+        {
+            FakeWallNarrowNormal?.SetActive(true)
+            FakeWallWide?.SetActive(false)
+        }
+        else if (pathOption == PATHSIZEOPTION_NORMAL)
+        {
+            FakeWallNarrowNormal?.SetActive(true)
+            FakeWallWide?.SetActive(false)
+        }
+        else if (pathOption == PATHSIZEOPTION_WIDE)
+        {
+            FakeWallNarrowNormal?.SetActive(false)
+            FakeWallWide?.SetActive(true)
+        }
         foreach (GroundBlock block in GroundBlocks)
         {
             block?.SetPathSizeOption(pathOption);
