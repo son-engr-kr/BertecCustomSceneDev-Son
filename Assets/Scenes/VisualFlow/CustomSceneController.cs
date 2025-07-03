@@ -555,18 +555,18 @@ public class CustomSceneController : MonoBehaviour
     {
         if (pathOption == PATHSIZEOPTION_NARROW)
         {
-            FakeWallNarrowNormal?.SetActive(true)
-            FakeWallWide?.SetActive(false)
+            FakeWallNarrowNormal?.SetActive(true);
+            FakeWallWide?.SetActive(false);
         }
         else if (pathOption == PATHSIZEOPTION_NORMAL)
         {
-            FakeWallNarrowNormal?.SetActive(true)
-            FakeWallWide?.SetActive(false)
+            FakeWallNarrowNormal?.SetActive(true);
+            FakeWallWide?.SetActive(false);
         }
         else if (pathOption == PATHSIZEOPTION_WIDE)
         {
-            FakeWallNarrowNormal?.SetActive(false)
-            FakeWallWide?.SetActive(true)
+            FakeWallNarrowNormal?.SetActive(false);
+            FakeWallWide?.SetActive(true);
         }
         foreach (GroundBlock block in GroundBlocks)
         {
