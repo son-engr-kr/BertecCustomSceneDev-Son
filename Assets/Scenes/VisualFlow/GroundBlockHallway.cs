@@ -25,7 +25,7 @@ public class GroundBlockHallway : GroundBlock
 
         float wideWidth = 10f;
         float wideHeight = 3.2f;
-
+    
 
         if (pathOption == CustomSceneController.PATHSIZEOPTION_NARROW)
         {

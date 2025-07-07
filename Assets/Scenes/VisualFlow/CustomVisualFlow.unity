@@ -1818,12 +1818,10 @@ MonoBehaviour:
   FakeWallNarrowNormal: {fileID: 1707570293}
   FakeWallWide: {fileID: 1318738007}
   TestRunning: 0
-  VisualFlowSpeed: 1
+  VisualFlowSpeed: 2
   FlowSpeedScaler: 1
   BlockRepostionOffset: 27
   GroundBlocks:
-  - {fileID: 1922953303}
-  - {fileID: 1190489918}
   - {fileID: 1228452863}
   - {fileID: 1766773104}
   - {fileID: 707159039}
@@ -2672,7 +2670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6073292882240324014, guid: eda1d0840329c9548905eac8678854a3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6073292882240324014, guid: eda1d0840329c9548905eac8678854a3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4208,17 +4206,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1103970897777553151, guid: 78afb2560b6a18c419fc0efa3114a472, type: 3}
   m_PrefabInstance: {fileID: 641650646}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1190489918 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1702163155859439848, guid: 78afb2560b6a18c419fc0efa3114a472, type: 3}
-  m_PrefabInstance: {fileID: 641650646}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5055c7a3f5468114d80ab5241990e5b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1193608648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6073292882240324014, guid: 19f1fd4147cf96b46bc990be69b86408, type: 3}
@@ -12260,17 +12247,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879902840}
   m_Mesh: {fileID: 2534964839176971238, guid: 9ae34710f0ac10247a39c6a918ceeef7, type: 3}
---- !u!114 &1922953303 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1969670551572649347, guid: eda1d0840329c9548905eac8678854a3, type: 3}
-  m_PrefabInstance: {fileID: 688804250}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5055c7a3f5468114d80ab5241990e5b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1929915551
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12767,7 +12743,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 688804251}
   - {fileID: 1716191239}
   - {fileID: 1190489917}
   - {fileID: 1228452862}
@@ -12795,6 +12770,7 @@ Transform:
   - {fileID: 757916516}
   - {fileID: 1270460777}
   - {fileID: 2032355757}
+  - {fileID: 688804251}
   - {fileID: 1320487125}
   - {fileID: 529901504}
   m_Father: {fileID: 249662508}
