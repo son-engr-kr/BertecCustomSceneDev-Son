@@ -673,7 +673,9 @@ public class CustomSceneController : MonoBehaviour
                 GroundBlock srcBlock = GroundBlocks[otherindex];
                 Bounds srcBounds =
                     Utils.GetBoundingForGameObject(srcBlock.gameObject); // this is always in world coords
-                float newZ = srcBounds.center.z + srcBounds.size.z; // move the new center so that the edges line up
+                float newZ = srcBounds.center.z + srcBounds.size.z; // move the new center so that the edges line up'
+                // float newZ = srcBounds.center.z + (srcBounds.size.z / 2f);
+
                 Vector3 pos = GroundBlocks[i].transform.position;
                 pos.z = newZ;
                 GroundBlocks[i].transform.position = pos; // resets the world space position
