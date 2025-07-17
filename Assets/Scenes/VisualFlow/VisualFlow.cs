@@ -182,6 +182,22 @@ public class VisualFlow : MonoBehaviour
             // Scene audio
             AddCheckbox(AUDIOAMBIANCEOPTION, "Scene Audio").Group = GroupSection; // defaults to unchecked
         }
+        
+        public ProtocolOptionChangedEventHandler OptionEvents
+        {
+            get
+            {
+                if (optionsContainer == null)
+                    optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer_Impl>();
+                if (optionsContainer == null)
+                    optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer>();
+                if (optionsContainer != null)
+                    return optionsContainer.OptionEvents;
+                else
+                    return null;
+
+            }
+        }
     }
 
     // The Unity scene properties
@@ -258,7 +274,7 @@ public class VisualFlow : MonoBehaviour
     public KeyPointVisualizerEvents.VisualizerMode visualizerMode = KeyPointVisualizerEvents.VisualizerMode.None;
     private string currentCopKeypointImageSelection = "";
 
-    void Awake()
+    void Awake()        // TODO: set up event handler for subject height input here "not just setting a variable, you'd be manipulating the actual camera Y position."
     {
         TestRunning = false;
         VisualFlowSpeed = 0;
