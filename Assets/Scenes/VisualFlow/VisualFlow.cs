@@ -40,6 +40,26 @@ public class VisualFlow : MonoBehaviour
 
     public const string AUDIOAMBIANCEOPTION = "audioambiance";
     public const string VISUALDISTRACTIONSOPTION = "visualdistractions";
+    
+    public object optionsContainer;
+    public float subjectHeightMM;
+        
+    public ProtocolOptionChangedEventHandler OptionEvents
+    {
+        get
+        {
+            if (optionsContainer == null)
+                optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer_Impl>();
+            if (optionsContainer == null)
+                optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer>();
+            if (optionsContainer != null)
+                // return optionsContainer.OptionEvents;
+                return (optionsContainer as dynamic)?.OptionEvents;
+            else
+                return null;
+
+        }
+    }
 
 
     // This defines the scene info used by the Bertec system to display the scene in the UI.
@@ -182,22 +202,8 @@ public class VisualFlow : MonoBehaviour
             // Scene audio
             AddCheckbox(AUDIOAMBIANCEOPTION, "Scene Audio").Group = GroupSection; // defaults to unchecked
         }
-        
-        public ProtocolOptionChangedEventHandler OptionEvents
-        {
-            get
-            {
-                if (optionsContainer == null)
-                    optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer_Impl>();
-                if (optionsContainer == null)
-                    optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer>();
-                if (optionsContainer != null)
-                    return optionsContainer.OptionEvents;
-                else
-                    return null;
 
-            }
-        }
+
     }
 
     // The Unity scene properties
@@ -276,6 +282,10 @@ public class VisualFlow : MonoBehaviour
 
     void Awake()        // TODO: set up event handler for subject height input here "not just setting a variable, you'd be manipulating the actual camera Y position."
     {
+        	OptionEvents.SubjectHeightChanged += (mm) =>
+            {
+                subjectHeightMM = mm;  // only matters if UseDegreeOfLean is turned on.
+            };
         TestRunning = false;
         VisualFlowSpeed = 0;
 
