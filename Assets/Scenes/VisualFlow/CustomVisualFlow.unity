@@ -557,6 +557,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19f1fd4147cf96b46bc990be69b86408, type: 3}
+--- !u!1 &171439645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8844963876308033042, guid: f8b6269b61653c94a8c6d4ab2a0ee640, type: 3}
+  m_PrefabInstance: {fileID: 1531028651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &185430602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,9 +1262,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FakeWallNarrowNormal: {fileID: 757916515}
   FakeWallWide: {fileID: 1270460776}
+  subjectHeightMM: 0
   TestRunning: 0
   VisualFlowSpeed: 1
-  FlowSpeedScaler: 1
+  FlowSpeedScaler: 2
   BlockRepostionOffset: 27
   GroundBlocks:
   - {fileID: 2088715672}
@@ -3818,6 +3824,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainBertecController
       objectReference: {fileID: 0}
+    - target: {fileID: 1249009222900104343, guid: f8b6269b61653c94a8c6d4ab2a0ee640, type: 3}
+      propertyPath: _mainCamera
+      value: 
+      objectReference: {fileID: 1531028653}
+    - target: {fileID: 1249009222900104343, guid: f8b6269b61653c94a8c6d4ab2a0ee640, type: 3}
+      propertyPath: _mainContainer
+      value: 
+      objectReference: {fileID: 171439645}
     - target: {fileID: 2416378841715699413, guid: f8b6269b61653c94a8c6d4ab2a0ee640, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -4646,7 +4660,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1869388246
 Transform:
   m_ObjectHideFlags: 0
