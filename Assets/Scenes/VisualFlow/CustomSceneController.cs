@@ -1,3 +1,4 @@
+// This is our custom version adapted from VisualFlow.cs
 using Bertec;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,25 @@ public class CustomSceneController : MonoBehaviour
 
     public GameObject FakeWallNarrowNormal;
     public GameObject FakeWallWide;
+    public object optionsContainer;
+    public float subjectHeightMM;
 
+    public ProtocolOptionChangedEventHandler OptionEvents
+    {
+        get
+        {
+            if (optionsContainer == null)
+                optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer_Impl>();
+            if (optionsContainer == null)
+                optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer>();
+            if (optionsContainer != null)
+                // return optionsContainer.OptionEvents;
+                return (optionsContainer as dynamic)?.OptionEvents;
+            else
+                return null;
+
+        }
+    }
 
     // Using variable names for the option keys helps avoid any copy-paste mistakes that can happen when using raw strings.
     // It also makes the code easier to read when differentiating between say PERIPHERALOPTION_NONE and OBSTACLEOPTION_NONE
@@ -202,7 +221,7 @@ public class CustomSceneController : MonoBehaviour
     // UpdateVisualFlowSpeed and MoveGroundBlocks
     public float
         FlowSpeedScaler =
-            0.2f; // this is used to scale the belt speed to the visual flow speed. The belt speed is in meters per second
+            1.0f; // this is used to scale the belt speed to the visual flow speed. The belt speed is in meters per second
 
     // while the visual flow speed is in units per second. This value is used to convert the belt speed to the visual flow speed.
     // This value is set in the editor and should be tuned to match the visual flow speed to the belt speed.
@@ -265,6 +284,10 @@ public class CustomSceneController : MonoBehaviour
 
     void Awake()
     {
+            OptionEvents.SubjectHeightChanged += (mm) =>
+            {
+                subjectHeightMM = mm;  // only matters if UseDegreeOfLean is turned on.
+            };
         TestRunning = false;
         VisualFlowSpeed = 0;
 
