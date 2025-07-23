@@ -1262,7 +1262,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FakeWallNarrowNormal: {fileID: 757916515}
   FakeWallWide: {fileID: 1270460776}
-  subjectHeightMM: 0
+  newHeight: 0
+  MainBertecController: {fileID: 1323669921}
   TestRunning: 0
   VisualFlowSpeed: 1
   FlowSpeedScaler: 2
@@ -3383,6 +3384,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320487124}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1323669921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1249009222900104337, guid: f8b6269b61653c94a8c6d4ab2a0ee640, type: 3}
+  m_PrefabInstance: {fileID: 1531028651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1324702940
 GameObject:
   m_ObjectHideFlags: 0

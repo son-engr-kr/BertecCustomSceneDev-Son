@@ -11,7 +11,10 @@ public class CustomSceneController : MonoBehaviour
     public GameObject FakeWallNarrowNormal;
     public GameObject FakeWallWide;
     public object optionsContainer;
-    public float subjectHeightMM;
+    public float newHeight;
+
+    public Transform MainBertecController;
+    
 
     public ProtocolOptionChangedEventHandler OptionEvents
     {
@@ -286,8 +289,13 @@ public class CustomSceneController : MonoBehaviour
     {
             OptionEvents.SubjectHeightChanged += (mm) =>
             {
-                subjectHeightMM = mm;  // only matters if UseDegreeOfLean is turned on.
+                Vector3 tempPos = MainBertecController.position;
+
+                tempPos.y = newHeight;
+
+                MainBertecController.position = tempPos;
             };
+
         TestRunning = false;
         VisualFlowSpeed = 0;
 
