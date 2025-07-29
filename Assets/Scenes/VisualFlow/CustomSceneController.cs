@@ -1,5 +1,6 @@
 // This is our custom version adapted from VisualFlow.cs
 using Bertec;
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,28 +11,38 @@ public class CustomSceneController : MonoBehaviour
 
     public GameObject FakeWallNarrowNormal;
     public GameObject FakeWallWide;
-    public object optionsContainer;
+    // public object optionsContainer;
     public float newHeight;
 
     public Transform MainBertecController;
     
+   protected OptionChangedContainer_Impl optionsContainer;
+ 
+    protected ProtocolOptionChangedEventHandler OptionEvents
 
-    public ProtocolOptionChangedEventHandler OptionEvents
     {
         get
         {
-            if (optionsContainer == null)
-                optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer_Impl>();
-            if (optionsContainer == null)
-                optionsContainer = GameObject.FindObjectOfType<Bertec.OptionChangedContainer>();
-            if (optionsContainer != null)
-                // return optionsContainer.OptionEvents;
-                return (optionsContainer as dynamic)?.OptionEvents;
+            if (!optionsContainer)
+            {
+                optionsContainer = GameObject.FindAnyObjectByType<Bertec.OptionChangedContainer_Impl>();
+            }
+            if (!optionsContainer)
+            {
+                optionsContainer = GameObject.FindAnyObjectByType<Bertec.OptionChangedContainer>();
+            }
+            if (optionsContainer)
+            {
+                return optionsContainer.OptionEvents;
+            }
             else
+            {
                 return null;
-
+            }
         }
+
     }
+ 
 
     // Using variable names for the option keys helps avoid any copy-paste mistakes that can happen when using raw strings.
     // It also makes the code easier to read when differentiating between say PERIPHERALOPTION_NONE and OBSTACLEOPTION_NONE
@@ -287,25 +298,36 @@ public class CustomSceneController : MonoBehaviour
 
     void Awake()
     {
-            OptionEvents.SubjectHeightChanged += (mm) =>
-            {
-                Vector3 tempPos = MainBertecController.position;
+ 
+        // Set up the camera vertical position changing
+        OptionEvents.SubjectHeightChanged += (meters) => SetCameraYOffset(meters);
 
-                tempPos.y = newHeight;
+        SetCameraYOffset(OptionEvents.SubjectHeight);
 
-                MainBertecController.position = tempPos;
-            };
+       // If the main controller is not set, then find it.
+
+        if (!mainBertecController)
+
+            mainBertecController = GameObject.Find("MainBertecController");
+ 
+        // Set the base value that will be set around the subject height
+
+        if (mainBertecController)
+
+            mainBertecControllerYOrigin = mainBertecController.transform.position.y;
+
+ 
 
         TestRunning = false;
         VisualFlowSpeed = 0;
 
         // Reset all the options to their defaults so the scene starts in a known state. The options handler will call OptionChanged
         // during the start phase with any options set in the UI.
-        
+
         // UI shows default, NONE, so no CoP or Keypoint Should be assigned.
         //SetKeypointVisualizer(KeyPointVisualizerEvents.FORCEPLATEKEYPOINTTAG, KEYPOINTVIZOPTION_BALL);
         //SetKeypointVisualizer(KEYPOINTVIZOPTION_STAR, "");  // turn off the mocap star until the user selects one in the ui
-        
+
 
         SetAudioAmbiance(false);
         SetObstacleAudioFeedbackOption(false);
@@ -323,17 +345,38 @@ public class CustomSceneController : MonoBehaviour
 
         ObstacleEvents.OnResetHitMissCounts += ResetHitMissCounts;
 
-        if (ObstacleObject!=null)
+        if (ObstacleObject != null)
         {
             Bounds kpBounds = Utils.GetBoundingForGameObject(COP_Container);
             Bounds ooBounds = Utils.GetBoundingForGameObject(ObstacleObject.gameObject);
             ObstacleObject.ObstacleMissZLimit = COP_Container.transform.position.z -
-                (kpBounds.extents.z + ooBounds.extents.z); 
+                (kpBounds.extents.z + ooBounds.extents.z);
             // missing will be just behind the trailing edge of the keypoint and just before the leading edge of the obstacle.
             // You can adjust this a bit forwards (ex: * 0.9f) or back (*1.1f) depending on how you like it to 'feel'
         }
-    }
+        
 
+    }
+    [Header("Integration")] public GameObject mainBertecController = null;
+ 
+    protected float mainBertecControllerYOrigin = 0;
+
+    private void SetCameraYOffset(float meters)
+    {
+        Debug.Log("SetCameraYOffset mm=" + meters);
+        if (meters > 0.3)
+        {
+            // Set the camera Y offset to the subject height in meters; this is used to position the camera at the correct height
+            // The main controller is used to set the camera position, so we can use it to set the Y offset
+            if (mainBertecController)
+            {
+                Vector3 pos = mainBertecController.transform.position;
+                pos.y = meters;
+                Debug.Log("SetCameraYOffset old pos=" + mainBertecController.transform.position.y + " new pos=" + pos.y);
+                mainBertecController.transform.position = pos;
+            }
+        }
+    }
     private void OnDestroy()
     {
         VisualFlowMovementSpeed.SpeedUpdated -= UpdateVisualFlowSpeed;
